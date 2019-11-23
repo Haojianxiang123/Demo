@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.haojianxiang.mapper.Sys_TopicMapper">
+    <select id="queryAll" resultType="sys_topic">
+        select * from sys_topic
+    </select>
+    <insert id="insert">
+        insert into sys_topic values (default, #{title}, #{content}, #{author}, now(), 0)
+    </insert>
+    <select id="selectOne" resultType="sys_topic">
+        select * from sys_topic where topicid=#{0}
+    </select>
+    <update id="add">
+        update sys_topic set clickamount=clickamount+1 where topicid=#{0}
+    </update>
+</mapper>
