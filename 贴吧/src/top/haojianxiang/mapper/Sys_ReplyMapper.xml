@@ -5,7 +5,7 @@
 <mapper namespace="top.haojianxiang.mapper.Sys_ReplyMapper">
     <select id="selectReply" resultType="Sys_reply">
         select * from sys_reply where topicid=#{0}
-    </select>   11
+    </select>
     <insert id="publishReply">
         insert into sys_reply values (default, #{topicId}, #{author}, #{content}, now())
     </insert>
